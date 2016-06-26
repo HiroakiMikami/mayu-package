@@ -34,5 +34,5 @@ build() {
 
 package() {
   cd "$srcdir/${pkgname%-git}"
-	make prefix="$pkgdir/" install
+	make prefix="$pkgdir/usr" install
 }
