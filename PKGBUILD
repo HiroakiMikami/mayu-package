@@ -33,6 +33,14 @@ build() {
 }
 
 package() {
+  # Add systemd service
+  cd "$startdir"
+  mkdir -p "$pkgdir/usr/local"
+  mkdir -p "$pkgdir/etc/systemd/system"
+  cp ./mayud "$pkgdir/usr/local"
+  cp ./mayu@.service "$pkgdir/etc/systemd/system/"
+
+  # Install mayu
   cd "$srcdir/${pkgname%-git}"
   make prefix="$pkgdir/usr/local" install
 }

@@ -1,0 +1,11 @@
+[Unit]
+Description=Mayu for Linux
+
+[Service]
+Type=forking
+PIDFile=/run/mayu.pid
+ExecStart=/usr/local/bin/mayud start $I
+ExecStop=/usr/local/bin/mayud stop
+
+[Install]
+WantedBy=multi-user.target
