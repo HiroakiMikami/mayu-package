@@ -4,7 +4,7 @@ Description=Mayu for Linux
 [Service]
 Type=forking
 PIDFile=/run/mayu.pid
-ExecStart=/usr/local/bin/mayud start $I
+ExecStart=/usr/local/bin/mayud start %i
 ExecStop=/usr/local/bin/mayud stop
 
 [Install]

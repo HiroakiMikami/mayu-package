@@ -5,14 +5,14 @@ case $1 in
         if [ ! -e /run/mayu.pid ]
         then
             USER=$2 HOME=/home/$2 /usr/local/bin/mayu &
-            echo \$! > /run/mayu.pid
+            echo $! > /run/mayu.pid
         fi
         ;;
     "stop")
         if [ -e /run/mayu.pid ]
         then
-            pid=\$(cat /run/mayu.pid)
-            kill \${pid}
+            pid=$(cat /run/mayu.pid)
+            kill ${pid}
             rm /run/mayu.pid
         fi
         ;;
