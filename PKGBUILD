@@ -35,9 +35,9 @@ build() {
 package() {
   # Add systemd service
   cd "$startdir"
-  mkdir -p "$pkgdir/usr/local"
+  mkdir -p "$pkgdir/usr/local/bin"
   mkdir -p "$pkgdir/etc/systemd/system"
-  cp ./mayud "$pkgdir/usr/local"
+  cp ./mayud "$pkgdir/usr/local/bin"
   cp ./mayu@.service "$pkgdir/etc/systemd/system/"
 
   # Install mayu
